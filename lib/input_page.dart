@@ -7,7 +7,7 @@ import 'icon_text.dart';
 const double bottomContainerHeight = 80.0;
 const Color activeCardColor = Color(0xFF1D1E33);
 const Color inactiveCardColor = Color(0xFF111328);
-const bottomContainerColor = Color(0xFFEB1555);
+const bottomContainerColor = Color(0xFFEB1558);
 
 enum Gender {
   male,
@@ -44,7 +44,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: IconText(
-                      icon: FontAwesomeIcons.mars,
+                      icon: FontAwesomeIcons.male,
                       text: "MALE",
                     ),
                     color: (selectedGender == Gender.male)
@@ -62,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: IconText(
-                      icon: FontAwesomeIcons.venus,
+                      icon: FontAwesomeIcons.female,
                       text: "FEMALE",
                     ),
                     color: (selectedGender == Gender.female)
