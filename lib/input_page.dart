@@ -44,7 +44,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: IconText(
-                      icon: FontAwesomeIcons.male,
+                      icon: FontAwesomeIcons.mars,
                       text: "MALE",
                     ),
                     color: (selectedGender == Gender.male)
@@ -62,7 +62,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: IconText(
-                      icon: FontAwesomeIcons.female,
+                      icon: FontAwesomeIcons.venus,
                       text: "FEMALE",
                     ),
                     color: (selectedGender == Gender.female)
