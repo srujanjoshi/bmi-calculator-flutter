@@ -14,7 +14,27 @@ const TextStyle kNumberTextStyle = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.w900,
 );
-const TextStyle kCalculateTextStyle = TextStyle(
+const TextStyle kLargeButtonTextStyle = TextStyle(
   fontSize: 30,
+  fontWeight: FontWeight.w600,
+);
+
+const TextStyle kLargeTextStyle = TextStyle(
+  fontSize: 40,
   fontWeight: FontWeight.w500,
+);
+
+const TextStyle kBMITextStyle = TextStyle(
+  fontSize: 80,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kResultTextStyle = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w400,
+  color: Color(0xFF24D875),
+);
+
+const TextStyle kAdviceTextStyle = TextStyle(
+  fontSize: 20,
 );

@@ -1,3 +1,5 @@
+import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/results_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -198,24 +200,51 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
             onTap: () {
-              Navigator.pushNamed(context, "/results");
+              CalculatorBrain calculation =
+                  CalculatorBrain(height: height, weight: weight);
+              String score = calculation.getBMI();
+              String result = calculation.getResult();
+              String advice = calculation.getAdvice();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultsPage(
+                            score: score,
+                            result: result,
+                            advice: advice,
+                          )));
             },
-            child: Container(
-              child: Text(
-                "CALCULATE",
-                style: kCalculateTextStyle,
-                textAlign: TextAlign.center,
-              ),
-              margin: EdgeInsets.only(top: 10),
-              padding: EdgeInsets.all(20),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              color: kBottomContainerColor,
-            ),
+            text: "CALCULATE",
           ),
         ],
+      ),
+    );
+  }
+}
+
+class BottomButton extends StatelessWidget {
+  BottomButton({@required this.onTap, @required this.text});
+
+  final String text;
+  final Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: this.onTap,
+      child: Container(
+        child: Text(
+          this.text,
+          style: kLargeButtonTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        margin: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.all(20),
+        width: double.infinity,
+        height: kBottomContainerHeight,
+        color: kBottomContainerColor,
       ),
     );
   }
